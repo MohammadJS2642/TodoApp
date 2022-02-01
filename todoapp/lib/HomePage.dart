@@ -25,7 +25,7 @@ class CustomAddButton extends StatelessWidget {
       alignment: Alignment.bottomRight,
       child: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: ElevatedButton(
+        child: FloatingActionButton(
           onPressed: () => {
             Navigator.pushNamed(context, '/inputtask'),
           },
@@ -33,12 +33,8 @@ class CustomAddButton extends StatelessWidget {
             Icons.add,
             color: Colors.white,
           ),
-          style: ElevatedButton.styleFrom(
-            shape: const CircleBorder(),
-            padding: const EdgeInsets.all(20.0),
-            primary: Colors.blue,
-            onPrimary: Colors.pink,
-          ),
+          elevation: 10.0,
+          shape: const CircleBorder(),
         ),
       ),
     );

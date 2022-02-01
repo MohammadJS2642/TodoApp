@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 // create task page after navigate to it
@@ -26,6 +24,7 @@ class MaterialInputTask extends StatelessWidget {
   }
 }
 
+// TaskPosition
 class TaskPosition extends StatelessWidget {
   const TaskPosition({Key? key}) : super(key: key);
 
@@ -33,7 +32,7 @@ class TaskPosition extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: const <Widget>[
-        CustomTextFields(),
+        TaskSectionName(),
         AddTodoButton(),
       ],
     );
@@ -41,14 +40,14 @@ class TaskPosition extends StatelessWidget {
 }
 
 // add name to todo list
-class CustomTextFields extends StatefulWidget {
-  const CustomTextFields({Key? key}) : super(key: key);
+class TaskSectionName extends StatefulWidget {
+  const TaskSectionName({Key? key}) : super(key: key);
 
   @override
-  _CustomTextFieldsState createState() => _CustomTextFieldsState();
+  _TaskSectionNameState createState() => _TaskSectionNameState();
 }
 
-class _CustomTextFieldsState extends State<CustomTextFields> {
+class _TaskSectionNameState extends State<TaskSectionName> {
   @override
   Widget build(BuildContext context) {
     return const Padding(
@@ -61,6 +60,7 @@ class _CustomTextFieldsState extends State<CustomTextFields> {
   }
 }
 
+// AddTodoButton
 class AddTodoButton extends StatefulWidget {
   const AddTodoButton({Key? key}) : super(key: key);
 
@@ -72,7 +72,7 @@ class AddTodoButtonState extends State<AddTodoButton> {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () => {const AddTodoItems()},
+      onPressed: () => {const TodoItems()},
       child: Row(
         children: const <Widget>[
           Icon(Icons.add),
@@ -83,14 +83,30 @@ class AddTodoButtonState extends State<AddTodoButton> {
   }
 }
 
-class AddTodoItems extends StatefulWidget {
-  const AddTodoItems({Key? key}) : super(key: key);
+// TodoList
+class TodoList extends StatefulWidget {
+  const TodoList({Key? key}) : super(key: key);
 
   @override
-  _AddTodoItemsState createState() => _AddTodoItemsState();
+  _TodoListState createState() => _TodoListState();
 }
 
-class _AddTodoItemsState extends State<AddTodoItems> {
+class _TodoListState extends State<TodoList> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+// TodoItems
+class TodoItems extends StatefulWidget {
+  const TodoItems({Key? key}) : super(key: key);
+
+  @override
+  _TodoItemsState createState() => _TodoItemsState();
+}
+
+class _TodoItemsState extends State<TodoItems> {
   @override
   Widget build(BuildContext context) {
     return const Padding(
